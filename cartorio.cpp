@@ -5,11 +5,14 @@
 
 int registro() //função responsavel pelo cadastro de usuarios
 {
+	system("cls");
+	
 	char arquivo[40]; // inicio da criação de variaveis
 	char cpf[40];
 	char nome[40];
 	char sobrenome[40];
-	char cargo[40]; // final da criação de variaveis
+	char cargo[40];
+	int opcao = 1; // final da criação de variaveis
 	
 	printf("Digite o CPF a ser cadastrado: "); //coletando informaçao do usuario
 	scanf("%s", cpf); //%s = string
@@ -54,6 +57,19 @@ int registro() //função responsavel pelo cadastro de usuarios
 	fprintf(file, cargo);
 	fclose(file);
 	
+	printf("Usuario Cadastrado com sucesso!!\n\n");
+	
+	printf("Para voltar ao menu digite - 1\n");
+	printf("Para continuar cadastrando digite - 2 \n\n");
+	
+	printf("Opção:");
+	scanf("%d", &opcao);
+	
+	if(opcao == 1){
+		return 1;
+	}else{
+		registro();
+	}
 	system("pause");
 }
 
@@ -106,7 +122,9 @@ int deletar()
 }
 	
 int main()
-{
+{	
+	system("cls");
+	
 	int opcao = 0; //Variavel definida para o menu
 	int x = 1; //variavel definada para o for
 	
